@@ -1,4 +1,5 @@
 # remix-electron-template
+trigger
 
 Welcome to your new remix-electron project!
 
