@@ -9,13 +9,14 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { MetaFunction, LinksFunction } from "@remix-run/node"; // Depends on the runtime you choose
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 
 import { ServerStyleContext, ClientStyleContext } from "./context";
 import rootStyles from "./styles.css";
 import tailwindStyles from "./styles/app.css";
 import themeConfig from "~/theme";
 import Header from "~/components/layout/Header";
+import theme from "~/theme";
 
 export const meta: MetaFunction = () => ({
   title: "Bill",
@@ -71,6 +72,8 @@ const Document = withEmotionCache(
           ))}
         </head>
         <body>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+
           {children}
           <ScrollRestoration />
           <Scripts />
